@@ -1,0 +1,36 @@
+.seccion__temas {
+    position: relative;
+    top: 6.5px;
+    margin: 0 16px;
+    .temas {
+        margin-top: 24px;
+        .tema {
+            text-align: center;
+            & img {
+                padding: 13px 0;
+            }
+        }
+        .tema__2 {
+            margin: 36px 0 52px 0;
+        }
+        .tema__4 {
+            margin: 52px 0 42px 0;
+        }
+    }
+    @media screen and (min-width: 768px){
+        top: -40.8px;
+        margin: 0 200px;
+        .temas {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            .tema {
+                margin: unset;
+                h3 {
+                    width: 220px;
+                }
+            }
+        }
+    }
+    
+}

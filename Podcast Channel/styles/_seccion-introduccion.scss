@@ -1,0 +1,50 @@
+.seccion__introduccion {
+    display: flex;
+    flex-flow: column;
+    margin: 0 16px 0 16px;
+    h1 {
+        .linea__medio {
+            text-decoration: line-through;
+        }
+    }
+    p {
+        margin-top: 16px;
+    }
+    .bttn_conoce-mas {
+        margin-top: 36px;
+        align-self: center;
+        width: 288px;
+        height: 48px;
+        background: #00F3BB;
+        border: none;
+        font-family: $font-primary;
+        font-weight: 500;
+        font-size: 16px;
+        color: $color-primary;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 22px;
+    }
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-flow: column;
+        margin-left: 200px; 
+        p {
+            width: 628px;
+            height: 48px;
+        }
+        .bttn_conoce-mas {
+            align-self: flex-start;
+            margin-top: 56px;
+            width: 226px;
+            height: 56px;
+            font-size: 18px;
+            line-height: 24px;
+            &:hover {
+                background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+                color: #FFFFFF;
+            }
+        }
+    }
+}  
+

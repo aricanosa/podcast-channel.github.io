@@ -1,0 +1,133 @@
+header {
+    font-family: $font-primary;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    .logo {
+        margin: 10px 0 10px 16px;
+        width: 24px;
+        height: 24px;
+    }
+    .chkbox {
+        width: 18px;
+        height: 12px;
+        position: absolute;
+        top: 16px;
+        right: 19px;
+        z-index: 1;
+        opacity: 0;
+        &:checked ~ .menu {
+            display: block;
+        }
+        &:checked ~ {
+            .hamburguesa > div {
+                transform: rotate(135deg);
+            }
+            .hamburguesa > div::before, .hamburguesa > div::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+        }
+    }
+    .hamburguesa {
+        width: 18px;
+        height: 12px;
+        position: absolute;
+        top: 16px;
+        right: 19px;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & div {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: #060A24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                top: -5px;
+                width: 100%;
+                height: 2px;
+                background-color: #060A24;
+            }
+            &:after {
+                top: 5px;
+            }
+        }
+    }
+    .menu {
+        display: none;
+        background: #0000EC;
+        .menu__links {
+            .link {      
+                list-style: none;      
+                margin: 0 0 24px 16px;
+                a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                    letter-spacing: 0;
+                    line-height: 28px;
+                }                               
+            }
+            .link__episodios {
+                width: 87px;
+                margin-top: 16px;
+            }
+            .link__nosotros {
+                width: 77px;
+            }
+            .link__entrevistas {
+                width: 106px;
+            }
+            .link__topicos {
+                width: 68px;
+            } 
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 80px;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        .logo {
+            margin: 22px 0 22px 100px;
+        }
+        .chkbox {
+            display: none;
+        }
+        .hamburguesa {
+            display: none;
+        }
+        .menu {
+            background-color: #FFFFFF;
+            display: flex;
+            margin-right: 52px;
+            .menu__links {
+                display: flex;
+                flex-flow: row nowrap;
+                .link {
+                    margin: 26px 48px 26px 0;
+                    height: 44px;
+                    a {
+                        color: $color-primary;
+                        &:hover {
+                            font-weight: 500;
+                            color: #00F3BB;
+                            text-decoration: line-through
+                        }
+                        &:active {
+                            color: rgba(6,10,36,0.56);
+                            text-decoration: line-through
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
